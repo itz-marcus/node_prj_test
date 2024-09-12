@@ -41,9 +41,9 @@ const updateFruit = async(req,res)=>{
 const addToCart = async(req,res)=>{
     console.log(req.body)
     let {id}= await getUserByIdDb(req.body.user)
-    console.log(id);
+    // console.log(id);
     
-    // await addToCartDb(req.body.id,id)
+    await addToCartDb(req.body.id,id)
     res.json({message:"you've added a fruit successfully to your cart"})
 }
 export{fetchFruitInfo, fetchFruitById, insertFruit, deleteFruit, updateFruit,addToCart}

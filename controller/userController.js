@@ -11,9 +11,10 @@ const fetchUserById = async(req,res)=>{
 
 const insertUser = async(req,res)=>{
 
-    let {cookie} = req.headers
-    let splitCookie = cookie.split("=")
-    console.log(splitCookie[1]);
+    // let {cookie} = req.headers
+    
+    // let splitCookie = cookie.split("=")
+    // console.log(splitCookie[1]);
         
 
     let {name,surname,age,fav_coding_lang,fav_car,eye_colour,username,password} = req.body
@@ -21,7 +22,7 @@ const insertUser = async(req,res)=>{
     // console.log(hashedP);
     
     if(hashedP.stack) throw (hashedP)
-        // await insertUserDb(name,surname,age,fav_coding_lang,fav_car,eye_colour,username,hashedP)
+        await insertUserDb(name,surname,age,fav_coding_lang,fav_car,eye_colour,username,hashedP)
         res.send(await getUserDb())
         console.log('Data was inserted successfully')
 }
